@@ -1,0 +1,16 @@
+<div class="row">
+    <div class="col-xs-12">
+      <button class="btn btn-success" (click)="onNewVegetable()">Nuovo Ortaggio</button>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-xs-12">
+      <app-vegetable-item
+        *ngFor="let vegetable of vegetables; let i = index"
+        [vegetable]="vegetable"
+        [index]="i"></app-vegetable-item>
+    </div>
+  </div>
+  
+  
