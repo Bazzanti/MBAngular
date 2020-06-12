@@ -1,0 +1,40 @@
+<h2 >Drag and Drop</h2>
+
+<hr>
+<div class="row">
+    <div class="col-xs-6">
+        <h3>Lista 1</h3>
+        <div
+        cdkDropList
+        #vegetablesList="cdkDropList"
+        [cdkDropListData]="vegetables"
+        [cdkDropListConnectedTo]="[vegetableSecondList]"
+        class="dragdrop-list"
+        (cdkDropListDropped)="drop($event)">
+            <div class="dragdrop-box" *ngFor="let item of vegetables" cdkDrag>
+                {{item.name}}
+                <img *cdkDragPreview [src]="item.imagePath" [alt]="item.name">
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-xs-6">
+        <h3>Lista 2</h3>
+        <div
+        cdkDropList
+        #vegetableSecondList="cdkDropList"
+        [cdkDropListData]="vegetablesSecond"
+        [cdkDropListConnectedTo]="[vegetablesList]"
+        class="dragdrop-list"
+        (cdkDropListDropped)="drop($event)">
+            <div class="dragdrop-box" *ngFor="let item of vegetablesSecond" cdkDrag>
+                <h4 class="list-group-item-heading">{{ item.name }}</h4>
+                <h6 class="list-group-item-text">{{ item.description }}</h6>
+                <img *cdkDragPreview [src]="item.imagePath" [alt]="item.name">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+  

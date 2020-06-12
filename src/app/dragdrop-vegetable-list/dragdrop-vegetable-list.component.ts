@@ -2,14 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { Vegetable } from '../models/vegetable.model';
 import { VegetableService } from '../service/vegetable.service';
 import { Subscription } from 'rxjs';
-import { moveItemInArray, transferArrayItem, CdkDragDrop, copyArrayItem } from '@angular/cdk/drag-drop';
+import { moveItemInArray, transferArrayItem, CdkDragDrop } from '@angular/cdk/drag-drop';
 
 @Component({
-  selector: 'app-field',
-  templateUrl: './field.component.html',
-  styleUrls: ['./field.component.css']
+  selector: 'app-dragdrop-vegetable-list',
+  templateUrl: './dragdrop-vegetable-list.component.html',
+  styleUrls: ['./dragdrop-vegetable-list.component.css']
 })
-export class FieldComponent implements OnInit {
+export class DragdropVegetableListComponent implements OnInit {
   subscription: Subscription;
   vegetables: Vegetable[];
   vegetablesSecond: Vegetable[] = [{name : "cocomero", description: "(__)", imagePath: "https://www.valfrutta.it/imageserver/immagine_pianta/files/2019/orto/cocomero.png"}];
@@ -32,23 +32,14 @@ export class FieldComponent implements OnInit {
     this.subscription.unsubscribe();
   }
 
-  dropCopy(event: CdkDragDrop<Vegetable[]>) {
+  drop(event: CdkDragDrop<Vegetable[]>) {
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
     } else {
-      copyArrayItem(event.previousContainer.data,
+      transferArrayItem(event.previousContainer.data,
                         event.container.data,
                         event.previousIndex,
                         event.currentIndex);
-    }
-  }
-
-  dropDelete(event: CdkDragDrop<Vegetable[]>) {
-    if (event.previousContainer === event.container) {
-      moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
-    } else {
-      //this.vegetablesSecond.splice(event.previousIndex, 1);
-      //console.log(this.vegetablesSecond);
     }
   }
 }

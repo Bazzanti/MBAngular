@@ -11,12 +11,12 @@ import { Vegetable } from './models/vegetable.model';
 @Injectable({ providedIn: 'root' })
 export class VegetablesResolverService implements Resolve<Vegetable[]> {
   constructor(
-    private recipesService: VegetableService
+    private vegetableService: VegetableService
   ) {}
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-    const recipes = this.recipesService.getVegetables();
-    return recipes;
+    const vegetable = this.vegetableService.getVegetables();
+    return vegetable;
 
   }
 }

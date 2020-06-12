@@ -39,21 +39,6 @@ export class VegetableEditComponent implements OnInit {
     this.onCancel();
   }
 
-  // onAddIngredient() {
-  //   (<FormArray>this.vegetableForm.get('ingredients')).push(
-  //     new FormGroup({
-  //       name: new FormControl(null, Validators.required),
-  //       amount: new FormControl(null, [
-  //         Validators.required
-  //       ])
-  //     })
-  //   );
-  // }
-
-  // onDeleteIngredient(index: number) {
-  //   (<FormArray>this.vegetableForm.get('ingredients')).removeAt(index);
-  // }
-
   onCancel() {
     this.router.navigate(['../'], { relativeTo: this.route });
   }
@@ -68,16 +53,6 @@ export class VegetableEditComponent implements OnInit {
       vegetableName = vegetable.name;
       vegetableImagePath = vegetable.imagePath;
       vegetableDescription = vegetable.description;
-      // if (vegetable['ingredients']) {
-      //   for (let ingredient of vegetable.ingredients) {
-      //     vegetableIngredients.push(
-      //       new FormGroup({
-      //         name: new FormControl(ingredient.name, Validators.required),
-      //         amount: new FormControl(ingredient.amount)
-      //       })
-      //     );
-      //   }
-      //}
     }
 
     this.vegetableForm = new FormGroup({

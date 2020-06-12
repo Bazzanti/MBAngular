@@ -7,16 +7,19 @@ import { VegetableEditComponent } from './vegetable-edit/vegetable-edit.componen
 import { VegetableComponent } from './vegetable/vegetable.component';
 import { VegetablesResolverService } from './vegetables-resolver.service';
 import { FieldComponent } from './field/field.component';
+import { DragdropVegetableListComponent } from './dragdrop-vegetable-list/dragdrop-vegetable-list.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/vegetable', pathMatch: 'full' },
-   { path: 'vegetable', component: VegetableComponent, children: [
+  { path: 'vegetable', component: VegetableComponent, children: [
      { path: '', component: VegetableStartComponent },
      { path: 'new', component: VegetableEditComponent },
      { path: ':id', component: VegetableDetailComponent, resolve: [VegetablesResolverService] },
      { path: ':id/edit', component: VegetableEditComponent, resolve: [VegetablesResolverService] },
-   ] },
+     ]
+   },
   { path: 'field', component: FieldComponent },
+  { path: 'dragdrop', component: DragdropVegetableListComponent },
 ];
 
 @NgModule({

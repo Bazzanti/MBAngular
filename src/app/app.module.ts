@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { VegetableListComponent } from './vegetable-list/vegetable-list.component';
 import { DropdownDirective } from './shared/dropdown.directive';
@@ -15,6 +15,10 @@ import { VegetableComponent } from './vegetable/vegetable.component';
 import { RouterModule } from '@angular/router';
 import { FieldComponent } from './field/field.component';
 import { CommonModule } from '@angular/common';
+import { DragdropVegetableListComponent } from './dragdrop-vegetable-list/dragdrop-vegetable-list.component';
+import { DragdropVegetableItemComponent } from './dragdrop-vegetable-list/dragdrop-vegetable-item/dragdrop-vegetable-item.component';
+import {DragDropModule} from '@angular/cdk/drag-drop';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -27,14 +31,19 @@ import { CommonModule } from '@angular/common';
     VegetableEditComponent,
     VegetableDetailComponent,
     VegetableComponent,
-    FieldComponent
+    FieldComponent,
+    DragdropVegetableListComponent,
+    DragdropVegetableItemComponent
     ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
     RouterModule,
-    CommonModule
+    CommonModule,
+    ReactiveFormsModule,
+    DragDropModule,
+    BrowserAnimationsModule
   ],
   providers: [VegetableService],
   bootstrap: [AppComponent]
