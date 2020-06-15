@@ -8,6 +8,7 @@ import { VegetableComponent } from './vegetable/vegetable.component';
 import { VegetablesResolverService } from './vegetables-resolver.service';
 import { FieldComponent } from './field/field.component';
 import { DragdropVegetableListComponent } from './dragdrop-vegetable-list/dragdrop-vegetable-list.component';
+import { VegetableGridComponent } from './vegetable-grid/vegetable-grid.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/vegetable', pathMatch: 'full' },
@@ -20,6 +21,7 @@ const appRoutes: Routes = [
    },
   { path: 'field', component: FieldComponent },
   { path: 'dragdrop', component: DragdropVegetableListComponent },
+  { path: 'grid', component: VegetableGridComponent },
 ];
 
 @NgModule({

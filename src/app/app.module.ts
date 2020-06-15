@@ -19,6 +19,7 @@ import { DragdropVegetableListComponent } from './dragdrop-vegetable-list/dragdr
 import { DragdropVegetableItemComponent } from './dragdrop-vegetable-list/dragdrop-vegetable-item/dragdrop-vegetable-item.component';
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { VegetableGridComponent } from './vegetable-grid/vegetable-grid.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     VegetableComponent,
     FieldComponent,
     DragdropVegetableListComponent,
-    DragdropVegetableItemComponent
+    DragdropVegetableItemComponent,
+    VegetableGridComponent
     ],
   imports: [
     BrowserModule,
@@ -43,7 +45,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     CommonModule,
     ReactiveFormsModule,
     DragDropModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
   ],
   providers: [VegetableService],
   bootstrap: [AppComponent]

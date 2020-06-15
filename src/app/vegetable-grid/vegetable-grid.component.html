@@ -1,0 +1,14 @@
+<h1>Drag& in grid</h1>
+
+<!-- <button (click)="add()">Add</button> -->
+
+<div class="example-container" cdkDropListGroup>
+  <div cdkDropList [cdkDropListEnterPredicate]="dropListEnterPredicate" (cdkDropListDropped)="dropListDropped($event)"></div>
+  <div cdkDropList *ngFor="let item of items"
+       [cdkDropListEnterPredicate]="dropListEnterPredicate" (cdkDropListDropped)="dropListDropped($event)">
+    <div cdkDrag class="example-box" (cdkDragMoved)="dragMoved($event);">
+      <p>{{item.name}}</p>
+      <img [src]="item.imagePath" [alt]="item.name" width="100px">
+    </div>
+  </div>
+</div> 

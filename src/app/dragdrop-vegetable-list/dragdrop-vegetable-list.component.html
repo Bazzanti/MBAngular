@@ -13,7 +13,7 @@
         (cdkDropListDropped)="drop($event)">
             <div class="dragdrop-box" *ngFor="let item of vegetables" cdkDrag>
                 {{item.name}}
-                <img *cdkDragPreview [src]="item.imagePath" [alt]="item.name">
+                <img *cdkDragPreview [src]="item.imagePath" [alt]="item.name"  width="100px">
             </div>
         </div>
     </div>
@@ -30,7 +30,7 @@
             <div class="dragdrop-box" *ngFor="let item of vegetablesSecond" cdkDrag>
                 <h4 class="list-group-item-heading">{{ item.name }}</h4>
                 <h6 class="list-group-item-text">{{ item.description }}</h6>
-                <img *cdkDragPreview [src]="item.imagePath" [alt]="item.name">
+                <img *cdkDragPreview [src]="item.imagePath" [alt]="item.name"  width="100px">
             </div>
         </div>
     </div>
